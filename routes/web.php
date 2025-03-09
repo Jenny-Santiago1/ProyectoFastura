@@ -768,7 +768,7 @@ Route::post('purchase-settlements', 'Tenant\PurchaseSettlementController@store')
         Route::middleware('auth:admin')->group(function () {
             Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
             Route::get('/', function () {
-                return redirect()->route('system.dashboard');
+                return redirect()->intended(route('system.dashboard'));
             });
             Route::get('dashboard', 'System\HomeController@index')->name('system.dashboard');
 
