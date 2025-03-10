@@ -39,3 +39,14 @@ Para mejorar la experiencia de usuario y facilitar el manejo de errores en el fr
 ### Integración con Ngrok
 
 Para exponer el proyecto principal a través de internet, utilicé Ngrok. Pude levantar la aplicación correctamente con un túnel, pero los dominios personalizados no funcionan debido a que Ngrok requiere una cuenta Pro para esta funcionalidad.
+
+
+## Pendientes y Mejoras
+
+* Revisar el uso de colas en el proyecto para determinar si es necesario configurarlas.
+
+* Optimizar la configuración de Docker para mejorar el rendimiento.
+
+* Completar el despliegue en Render y Railway.
+
+* Implementar mejores prácticas de seguridad y rendimiento.
