@@ -41,6 +41,8 @@
     <title>Facturación Electrónica</title>
     <meta name="googlebot" content="noindex">
     <meta name="robots" content="noindex">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link async href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -194,6 +196,8 @@
     <!-- Theme Custom -->
     <script src="{{asset('porto-light/js/custom.js')}}"></script>
     <script src="{{asset('porto-light/js/jquery.xml2json.js')}}"></script>
+
+
 
     <script>
 

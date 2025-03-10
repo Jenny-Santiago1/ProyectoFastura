@@ -43,7 +43,7 @@
                         <th class="text-right">Total</th>
                         <th class="text-center">Descarga</th>
                         <th class="text-right">Acciones</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }" :class="{ anulate_color : row.state_type_id == '11' }">
                         <td>{{ index }}</td>
                         <td class="text-center">{{ row.date_of_issue }}</td>
@@ -139,6 +139,7 @@
     import SaleOpportunitiesOptions from './partials/options.vue'
     import DataTable from '@components/DataTable.vue'
     import {deletable} from '@mixins/deletable'
+    import Swal from "sweetalert2";
 
     export default {
         props:['typeUser','canGenerate'],
@@ -193,10 +194,15 @@
         },
         methods: {
             clickDownloadFile(filename) {
-                window.open(
-                    `/${this.resource}/download-file/${filename}`,
-                    "_blank"
-                );
+                if (!filename) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "El archivo no existe o ha sido eliminado.",
+                    });
+                    return;
+                }
+                window.open(`/${this.resource}/download-file/${filename}`, "_blank");
             },
             clickDownload(external_id) {
                 window.open(`/${this.resource}/download/${external_id}`, '_blank');
